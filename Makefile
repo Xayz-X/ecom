@@ -1,0 +1,20 @@
+build:
+	@go build -o bin/ecom cmd/main.go
+
+test: 
+	@go test -v ./...
+
+run: 
+	@go run cmd/main.go
+
+migration:
+	@migration create 
+
+
+migrate-up:
+	@go run cmd/migrate/main.go up
+
+
+
+migrate-down:
+	@go run cmd/migrate/main.go down
